@@ -1,0 +1,55 @@
+version: '3.9'
+
+services:
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - php1
+      - php2
+      - php3
+    networks:
+      - app-network
+
+  php1:
+    build:
+      context: .
+      dockerfile: ./php/Dockerfile
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./src:/usr/src/src
+      - ./public:/usr/src/public
+    networks:
+      - app-network
+
+  php2:
+    build:
+      context: .
+      dockerfile: ./php/Dockerfile
+    ports:
+      - "8082:8082"
+    volumes:
+      - ./src:/usr/src/src
+      - ./public:/usr/src/public
+    networks:
+      - app-network
+
+  php3:
+    build:
+      context: .
+      dockerfile: ./php/Dockerfile
+    ports:
+      - "8083:8083"
+    volumes:
+      - ./src:/usr/src/src
+      - ./public:/usr/src/public
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
