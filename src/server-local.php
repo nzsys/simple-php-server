@@ -1,8 +1,8 @@
 <?php
 
-$host = '0.0.0.0';
+$host = '127.0.0.1';
 $port = $argv[1] ?? 8080;
-$baseDir = rtrim(realpath(__DIR__ . '/public'), '/');
+$baseDir = rtrim(realpath(__DIR__ . '/../public'), '/');
 $timeout = 10;
 $workerCount = 5;
 

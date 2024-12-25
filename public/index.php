@@ -1,13 +1,16 @@
-<html>
-<head>
-<title><?php echo 'top'; ?></title>
-<link rel="stylesheet" href="assets/style.css" type="text/css">
-<script src="assets/script.js"></script>
-</head>
-<body>
-    <h1>トップページ</h1>
-    <a href="form/">form</a>
-    <hr>
-    <pre><?php print_r($_SERVER); ?></pre>
-</body>
-</html>
+<?php
+echo 'OK';
+sleep(1);
+/*
+function gen($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[random_int(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+
+echo gen();
+*/
